@@ -22,6 +22,14 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
 
+a.internal {
+    color: #2b2f3e;
+}
+
+a.internal:hover {
+    color: #2b2f3e;
+}
+
 #sidebar section {
     background-color: #2b2f3e;
     color:            #fff;
@@ -155,13 +163,13 @@ aside.menu ul li ul {
 }
 
 #main-content h3 {
-    background-color: #f3f6fb;
+    background-color: #f3f4f6;
     padding:          1em;
 }
 
 #main-content dt {
     padding:          1em;
-    background-color: #f3f6fb;
+    background-color: #f3f4f6;
     margin-top:       -1em;
     padding-left:     1.5em;
 }
