@@ -59,7 +59,7 @@ The source code is licensed
 What it looks like
 ==================
 
-.. image:: http://dmitriid.com/i/gm2tomzygeytoobz.png
+.. image:: http://dmitriid.com/i/gm2tomjxhaydcnrv.png
    :width: 800px
 
 .. _Sphinx: http://www.sphinx-doc.org/
