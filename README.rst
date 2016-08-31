@@ -8,8 +8,12 @@ Or see screenshot below.
 How to
 ======
 
-``git clone`` this repo and copy ``freja/_static`` and ``freja/_templates`` to your Sphinx
-doc directory. See templating_ for more info. The relevant bits:
+One of:
+
+- `download <https://github.com/dmitriid/freja-sphinx/releases>`_ a release and extract it to your Sphinx doc directory.
+- ``git clone`` this repo and copy ``freja/_static`` and ``freja/_templates`` to your Sphinx doc directory. 
+
+See templating_ for more info. The relevant bits:
 
    To customize the output of your documentation you can **override all the templates** 
    (both the layout templates and the child templates) **by adding files with the same name**
@@ -45,15 +49,13 @@ This theme/layout override might not provide all the bells and whistles of a ful
 Acknowledgements
 ================
 
-`Bulma <http://bulma.io/documentation/layout/footer/>`_ by 
-`Jeremy Thomas <http://jgthms.com>`_. The source code is licensed
-`MIT <http://opensource.org/licenses/mit-license.php>`_.
+`Bulma <http://bulma.io/documentation/layout/footer/>`_ by `Jeremy Thomas <http://jgthms.com>`_. 
+The source code is licensed `MIT <http://opensource.org/licenses/mit-license.php>`_.
 
 `Typeplate <http://typeplate.com>`_ by Dennis Gaebel
 (`@gryghostvisuals <https://twitter.com/gryghostvisuals>`_) &
 Zachary Kain (`@zakkain <https://twitter.com/@zakkain>`_).
-The source code is licensed
-`CC BY 3.0 <hhttps://creativecommons.org/licenses/by/3.0/us/>`_.
+The source code is licensed `CC BY 3.0 <hhttps://creativecommons.org/licenses/by/3.0/us/>`_.
 
 
 What it looks like
