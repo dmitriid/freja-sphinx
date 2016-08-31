@@ -23,7 +23,7 @@ THE SOFTWARE.
 */
 
 #sidebar section {
-    background-color: #1fc8db;
+    background-color: #2b2f3e;
     color:            #fff;
 }
 
@@ -44,7 +44,9 @@ table tr:hover {
 #breadcrumbs {
     margin:       0 !important;
     padding-left: 2em;
-    font-size:    70%
+    font-size:    70%;
+    background-color: #4c5264;
+    color: #fff;
 }
 
 #breadcrumbs p {
@@ -53,7 +55,7 @@ table tr:hover {
 
 #sidebar {
     min-height: 100%;
-    background-color: #1fc8db;
+    background-color: #2b2f3e;
 }
 
 #sidebar section {
@@ -68,15 +70,15 @@ table tr:hover {
 
 #sidebar a:hover, aside.menu ul a:hover{
     background-color: #f5f7fa;
-    color:            #1fc8db;
+    color:            #2b2f3e;
 }
 
 aside.menu h3 {
     padding-bottom:   0.3em;
     padding-top:      0.2em;
     text-align:       center;
-    color:            #1fc8db;
-    background-color: #f5f7fa;
+    color:            #fff;
+    background-color: #4c5264;
     margin-left:      -1em;
     margin-right:     -0.79em;
     line-height:      1.1em;
@@ -111,11 +113,11 @@ aside.menu ul li ul {
 
 .toctree-wrapper ul a:hover {
     background-color: #f5f7fa;
-    color:            #1fc8db;
+    color:            #2b2f3e;
 }
 
 .toctree-wrapper a.is-active {
-    background-color: #1fc8db;
+    background-color: #2b2f3e;
     color:            white;
 }
 
@@ -253,7 +255,7 @@ pre, code {
 
 .field-list td.is-link > a:hover,
 .field-list th.is-link > a:hover {
-    background-color: #1fc8db;
+    background-color: #2b2f3e;
     color:            white;
 }
 
@@ -352,7 +354,7 @@ pre, code {
 
 .footer {
     font-size: 75%;
-    background-color: #1fc8db;
+    background-color: #2b2f3e;
     color:            #fff
 }
 
@@ -360,15 +362,15 @@ pre, code {
     margin: auto auto 1.5rem;
 }
 
-.footer a {
+.footer a, #breadcrumbs a {
     color:   #fff !important;
     text-decoration: underline;
     border-bottom: 0 !important;
 }
 
-.footer a:hover {
+.footer a:hover, #breadcrumbs a:hover {
     background-color: #f5f7fa;
-    color:            #1fc8db !important;
+    color:            #2b2f3e !important;
 }
 
 
