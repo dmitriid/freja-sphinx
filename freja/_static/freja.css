@@ -1,0 +1,382 @@
+/*
+The MIT License (MIT)
+
+Copyright (c) 2016 Dmitrii Dimandt <dmitrii@dmitriid.com>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+*/
+
+#sidebar section {
+    background-color: #1fc8db;
+    color:            #fff;
+}
+
+nav a {
+    border-bottom: 0 !important;
+}
+
+table tr:hover {
+    background-color: transparent;
+}
+
+.headerlink {
+    margin-left: 0.5rem;
+    font-size:   50%;
+    opacity:     0.2;
+}
+
+#breadcrumbs {
+    margin:       0 !important;
+    padding-left: 2em;
+    font-size:    70%
+}
+
+#breadcrumbs p {
+    margin: 0;
+}
+
+#sidebar {
+    min-height: 100%;
+    background-color: #1fc8db;
+}
+
+#sidebar section {
+    padding: 0px 20px;
+}
+
+#sidebar a, aside.menu ul a {
+    color:         #fff;
+    display:       block;
+    padding:       5px 10px;
+}
+
+#sidebar a:hover, aside.menu ul a:hover{
+    background-color: #f5f7fa;
+    color:            #1fc8db;
+}
+
+aside.menu h3 {
+    padding-bottom:   0.3em;
+    padding-top:      0.2em;
+    text-align:       center;
+    color:            #1fc8db;
+    background-color: #f5f7fa;
+    margin-left:      -1em;
+    margin-right:     -0.79em;
+    line-height:      1.1em;
+}
+
+aside.menu ul {
+    padding-bottom: 1em;
+}
+
+aside.menu ul a.is-active {
+    background-color: #f3f6fb;
+    color:            white;
+}
+
+aside.menu ul li ul {
+    border-left:  0;
+    margin:       10px;
+    padding-left: 10px;
+}
+
+#document-body {
+    margin-bottom: 0;
+}
+
+.toctree-wrapper ul a {
+    border-radius: 2px;
+    color:         #69707a;
+    display:       block;
+    padding:       5px 10px;
+    border-bottom: 0 !important;
+}
+
+.toctree-wrapper ul a:hover {
+    background-color: #f5f7fa;
+    color:            #1fc8db;
+}
+
+.toctree-wrapper a.is-active {
+    background-color: #1fc8db;
+    color:            white;
+}
+
+.toctree-wrapper ul li ul {
+    border-left:  0;
+    margin:       10px;
+    padding-left: 10px;
+}
+
+#main-content {
+    background-color: #fff;
+    padding-bottom: 2em;
+}
+
+#main-content .section {
+    padding: 0 !important;
+}
+
+#main-content p {
+    padding-left:  1.4em;
+    padding-right: 1.4em;
+}
+
+#main-content ul {
+    margin-left: 3.4em;
+}
+
+#main-content h1 {
+    padding-left: 0.7em;
+    padding-top:  0.5em;
+}
+
+#main-content h2 {
+    padding-left: 0.8em;
+}
+
+#main-content h3 {
+    background-color: #f3f6fb;
+    padding:          1em;
+}
+
+#main-content dt {
+    padding:          1em;
+    background-color: #f3f6fb;
+    margin-top:       -1em;
+    padding-left:     1.5em;
+}
+
+#main-content dd {
+    margin-left:  2em;
+    margin-top:   2em;
+    margin-right: 2em;
+}
+
+#main-content p {
+    margin:      auto auto 1.5rem;
+    text-indent: 0;
+}
+
+#main-content .highlight {
+    margin-left: 2em;
+}
+
+#main-content .field-list {
+    margin-left: 0.9em;
+}
+
+pre {
+    padding:     2em;
+    line-height: 2;
+}
+
+pre, code {
+    font-size: 100%;
+}
+
+.docutils {
+    margin-top: 2em;
+}
+
+.field-list {
+    background-color: #fff;
+    color:            #222324;
+    margin-bottom:    20px;
+    width:            100%;
+}
+
+.field-list td,
+.field-list th {
+    border:         1px solid #d3d6db;
+    border-width:   0 0 1px;
+    padding:        8px 10px;
+    vertical-align: top;
+}
+
+.field-list td.is-icon,
+.field-list th.is-icon {
+    padding:     5px;
+    text-align:  center;
+    white-space: nowrap;
+    width:       1%;
+}
+
+.field-list td.is-icon .fa,
+.field-list th.is-icon .fa {
+    display:        inline-block;
+    font-size:      21px;
+    height:         24px;
+    line-height:    24px;
+    text-align:     center;
+    vertical-align: top;
+    width:          24px;
+}
+
+.field-list td.is-icon.is-link,
+.field-list th.is-icon.is-link {
+    padding: 0;
+}
+
+.field-list td.is-icon.is-link > a,
+.field-list th.is-icon.is-link > a {
+    padding: 5px;
+}
+
+.field-list td.is-link,
+.field-list th.is-link {
+    padding: 0;
+}
+
+.field-list td.is-link > a,
+.field-list th.is-link > a {
+    display: block;
+    padding: 8px 10px;
+}
+
+.field-list td.is-link > a:hover,
+.field-list th.is-link > a:hover {
+    background-color: #1fc8db;
+    color:            white;
+}
+
+.field-list td.is-narrow,
+.field-list th.is-narrow {
+    white-space: nowrap;
+    width:       1%;
+}
+
+.field-list th {
+    color:      #222324;
+    text-align: left;
+}
+
+.field-list tr:hover {
+    background-color: #f5f7fa;
+    color:            #222324;
+}
+
+.field-list thead td,
+.field-list thead th {
+    border-width: 0 0 2px;
+    color:        #aeb1b5;
+}
+
+.field-list tbody tr:last-child td,
+.field-list tbody tr:last-child th {
+    border-bottom-width: 0;
+}
+
+.field-list tfoot td,
+.field-list tfoot th {
+    border-width: 2px 0 0;
+    color:        #aeb1b5;
+}
+
+.field-list.is-bordered td,
+.field-list.is-bordered th {
+    border-width: 1px;
+}
+
+.field-list.is-bordered tr:last-child td,
+.field-list.is-bordered tr:last-child th {
+    border-bottom-width: 1px;
+}
+
+.field-list.is-narrow td,
+.field-list.is-narrow th {
+    padding: 5px 10px;
+}
+
+.field-list.is-narrow td.is-icon,
+.field-list.is-narrow th.is-icon {
+    padding: 2px;
+}
+
+.field-list.is-narrow td.is-icon.is-link,
+.field-list.is-narrow th.is-icon.is-link {
+    padding: 0;
+}
+
+.field-list.is-narrow td.is-icon.is-link > a,
+.field-list.is-narrow th.is-icon.is-link > a {
+    padding: 2px;
+}
+
+.field-list.is-narrow td.is-link,
+.field-list.is-narrow th.is-link {
+    padding: 0;
+}
+
+.field-list.is-narrow td.is-link > a,
+.field-list.is-narrow th.is-link > a {
+    padding: 5px 10px;
+}
+
+.field-list.is-striped tbody tr:hover {
+    background-color: #eef2f7;
+}
+
+.field-list.is-striped tbody tr:nth-child(2n) {
+    background-color: #f5f7fa;
+}
+
+.field-list.is-striped tbody tr:nth-child(2n):hover {
+    background-color: #eef2f7;
+}
+
+.field-body ul {
+    margin-top: 0;
+}
+
+.index--padded {
+    padding: 0 1.5em;
+}
+
+.footer {
+    font-size: 75%;
+    background-color: #1fc8db;
+    color:            #fff
+}
+
+.footer p {
+    margin: auto auto 1.5rem;
+}
+
+.footer a {
+    color:   #fff !important;
+    text-decoration: underline;
+    border-bottom: 0 !important;
+}
+
+.footer a:hover {
+    background-color: #f5f7fa;
+    color:            #1fc8db !important;
+}
+
+
+#search-results h2:first-child {
+    color: white;
+}
+
+#search-results .highlighted {
+    background-color: yellow;
+    padding: 0.1em;
+}
