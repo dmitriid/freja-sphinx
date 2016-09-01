@@ -22,6 +22,10 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
 
+a, a:hover {
+    color: #2b2f3e;
+}
+
 a.internal {
     color: #2b2f3e;
 }
@@ -50,11 +54,12 @@ table tr:hover {
 }
 
 #breadcrumbs {
-    margin:       0 !important;
-    padding-left: 2em;
-    font-size:    70%;
+    margin:           0 !important;
+    padding-left:     2em;
+    font-size:        70%;
     background-color: #4c5264;
-    color: #fff;
+    color:            #fff;
+    height:           3em;
 }
 
 #breadcrumbs p {
@@ -62,7 +67,7 @@ table tr:hover {
 }
 
 #sidebar {
-    min-height: 100%;
+    min-height:       100%;
     background-color: #2b2f3e;
 }
 
@@ -71,25 +76,29 @@ table tr:hover {
 }
 
 #sidebar a, aside.menu ul a {
-    color:         #fff;
-    display:       block;
-    padding:       5px 10px;
+    color:   #fff;
+    display: block;
+    line-height: 1.5em;
 }
 
-#sidebar a:hover, aside.menu ul a:hover{
+#sidebar a:hover, aside.menu ul a:hover {
     background-color: #f5f7fa;
     color:            #2b2f3e;
 }
 
+.menu {
+    font-size: 95%;
+}
+
 aside.menu h3 {
-    padding-bottom:   0.3em;
-    padding-top:      0.2em;
     text-align:       center;
     color:            #fff;
     background-color: #4c5264;
     margin-left:      -1em;
-    margin-right:     -0.79em;
-    line-height:      1.1em;
+    margin-right:     -0.9em;
+    line-height:      1.8em;
+    height:           1.8em;
+    font-size:        120%;
 }
 
 aside.menu ul {
@@ -137,7 +146,7 @@ aside.menu ul li ul {
 
 #main-content {
     background-color: #fff;
-    padding-bottom: 2em;
+    padding-bottom:   2em;
 }
 
 #main-content .section {
@@ -361,7 +370,7 @@ pre, code {
 }
 
 .footer {
-    font-size: 75%;
+    font-size:        75%;
     background-color: #2b2f3e;
     color:            #fff
 }
@@ -371,9 +380,9 @@ pre, code {
 }
 
 .footer a, #breadcrumbs a {
-    color:   #fff !important;
+    color:           #fff !important;
     text-decoration: underline;
-    border-bottom: 0 !important;
+    border-bottom:   0 !important;
 }
 
 .footer a:hover, #breadcrumbs a:hover {
@@ -381,12 +390,21 @@ pre, code {
     color:            #2b2f3e !important;
 }
 
-
 #search-results h2:first-child {
     color: white;
 }
 
-#search-results .highlighted {
+#search-results .highlighted, #main-content .highlighted {
     background-color: yellow;
-    padding: 0.1em;
+    padding:          0.1em;
+}
+
+.search span {
+    display:      block;
+    padding-left: 1em;
+    color:        #4c5264;
+}
+
+.search li {
+    padding-top: 0.7em;
 }
