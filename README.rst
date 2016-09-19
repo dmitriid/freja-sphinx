@@ -1,9 +1,9 @@
 freja — a theme for Sphinx document generator
 =============================================
 
-This is a simple and (hopefully) clean theme for Sphinx_.
+This is a simple and (hopefully) clean theme for Sphinx_. 
 You can see it used `here <https://dmitriid.github.io/xstream4j/xstream4j/Stream.html>`_.
-Or see screenshot below.
+Or see screenshots at the bottom of this page.
 
 How to
 ======
@@ -38,6 +38,7 @@ This theme/layout override might not provide all the bells and whistles of a ful
 - Support for class/method/params/fields
 - Support for index pages
 - Support for the search page
+- Support for project logo (set in your conf.py and add image to ``_static``) 
 - All within one file
 
 **It does not provide**
@@ -49,17 +50,26 @@ This theme/layout override might not provide all the bells and whistles of a ful
 Acknowledgements
 ================
 
-`Bulma <http://bulma.io/documentation/layout/footer/>`_ by `Jeremy Thomas <http://jgthms.com>`_. 
-The source code is licensed `MIT <http://opensource.org/licenses/mit-license.php>`_.
+Version 0.2 is based on `Elixir docs <http://elixir-lang.org/docs/stable/elixir/Kernel.html>`_.
 
-`Typeplate <http://typeplate.com>`_ by Dennis Gaebel
-(`@gryghostvisuals <https://twitter.com/gryghostvisuals>`_) &
-Zachary Kain (`@zakkain <https://twitter.com/@zakkain>`_).
-The source code is licensed `CC BY 3.0 <hhttps://creativecommons.org/licenses/by/3.0/us/>`_.
+`Linear Icons <https://linearicons.com/free>`_ licensed under `CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0/>`_.
 
 
 What it looks like
 ==================
+
+Version 0.2
+-----------
+
+.. image:: http://dmitriid.com/i/gm2tonzzgqydknjv.png
+   :width: 800px
+
+.. image:: http://dmitriid.com/i/gm2toobtgmztonzs.png
+   :width: 800px
+
+
+Version 0.1
+-----------
 
 .. image:: http://dmitriid.com/i/gm2tomjxhaydcnrv.png
    :width: 800px

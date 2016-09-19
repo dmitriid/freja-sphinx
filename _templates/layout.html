@@ -22,7 +22,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 #}
 
-{% set toctree = toctree(maxdepth=3, collapse=False, includehidden=True) %}
+{% set toctree1 = toctree(maxdepth=1, collapse=False, includehidden=True) %}
+{% set toctree3 = toctree(maxdepth=3, collapse=False, includehidden=True) %}
+{% set toctree  = toctree(maxdepth=3, collapse=False, includehidden=True) %}
 {% set script_files = script_files + ['_static/searchtools.js'] %}
 
 <!DOCTYPE html>
@@ -69,9 +71,9 @@ THE SOFTWARE.
     {%- endblock %}
 
     <!-- CSS -->
-    <link rel="stylesheet" href="{{ pathto('_static/bulma/css/bulma.css', 1) }}" type="text/css"/>
     <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}" type="text/css"/>
-    <link rel="stylesheet" href="{{ pathto('_static/typeplate.css', 1) }}" type="text/css"/>
+    <!--link rel="stylesheet" href="{{ pathto('_static/typeplate.css', 1) }}" type="text/css"/-->
+    <link rel="stylesheet" href="{{ pathto('_static/normalize.css', 1) }}" type="text/css"/>
     <link rel="stylesheet" href="{{ pathto('_static/freja.css', 1) }}" type="text/css"/>
 
     <!-- JS -->
@@ -100,137 +102,133 @@ THE SOFTWARE.
     <script type="text/javascript" id="searchindexloader"></script>
 </head>
 <body role="document">
-<div class="columns is-gapless" id="document-body">
-    <div class="column" id="sidebar">
-        <section role="navigation" class="section">
-            <aside class="menu">
-                <h3>On this page</h3>
-                {{ toc }}
-
-                <ul>
-                    <li><a href="{{ pathto(master_doc) }}">Back to overview</a></li>
-                </ul>
-
-                <h3>Documentation</h3>
-                {{ toctree }}
-            </aside>
-        </section>
-    </div>
-    <div class="column is-three-quarters content">
-        <div class="level" id="breadcrumbs">
-            <div class="level-left">
-                <a class="level-item" href="{{ pathto(master_doc) }}">Docs</a>
-                <span class="level-item"> &raquo;</span>
-                {% for doc in parents %}
-                    <a class="level-item" href="{{ doc.link|e }}">{{ doc.title }}</a>
-                    <span class="level-item"> &raquo;</span>
-                {% endfor %}
-                <span class="nav-item"> &nbsp; </span>
+<div id="container">
+    <section class="sidebar">
+        <a href="/" class="sidebar-projectLink">
+            <div class="sidebar-projectDetails">
+                <h1 class="sidebar-projectName">
+                    {{ docstitle|e }}
+                </h1>
+                <h2 class="sidebar-projectVersion">
+                    {{ version }}
+                </h2>
             </div>
-            <div class="level-right">
-                <div class="level-item">
-                    <form action="{{ pathto('search') }}" method="get">
-                        <p class="control has-addons">
-                            <input name="q" class="input" type="text" placeholder="Search docs">
-                            <input type="submit" class="button" value="Search"/>
-                        </p>
-                        <input type="hidden" name="check_keywords" value="yes"/>
-                        <input type="hidden" name="area" value="default"/>
-                    </form>
-                </div>
-            </div>
+            {% if logo %}
+                <img src="{{ pathto('_static/' + logo, 1) }}" alt="{{ title|e }}" class="sidebar-projectImage" />            
+            {% endif %}
+        </a>
+        <div class="sidebar-search">
+            <form action="{{ pathto('search') }}" method="get">
+                <i class="icon-search"></i>
+                <input name="q"
+                       type="text" 
+                       class="sidebar-searchInput" 
+                       placeholder="search" 
+                       autocomplete="off">
+                <input type="hidden" name="check_keywords" value="yes"/>
+                <input type="hidden" name="area" value="default"/>
+            </form>
         </div>
-        <div id="main-content">
-            {{ body }}
 
-            {% if genindexentries %}
-                {% macro indexentries(firstname, links) %}
-                    {%- if links -%}
-                        <a href="{{ links[0][1] }}">
-                            {%- if links[0][0] %}<strong>{% endif -%}
-                            {{ firstname|e }}
-                            {%- if links[0][0] %}</strong>{% endif -%}
-                        </a>
-
-                        {%- for ismain, link in links[1:] -%}
-                            , <a href="{{ link }}">{% if ismain %}<strong>{% endif -%}
-                            [{{ loop.index }}]
-                            {%- if ismain %}</strong>{% endif -%}
-                        </a>
-                        {%- endfor %}
-                    {%- else %}
+        <div class="sidebar-listNav">
+            {{ toctree1 }}
+        </div>
+        
+        <div class="full-list">
+            <h1>On this page</h1>
+            {{ toc }}
+        </div>
+        <div class="full-list">
+            <h1>Full ToC</h1>
+            {{ toctree3 }}
+        </div>
+    </section>
+    <section class="content">
+        {{ body }}
+        <div id="search-results">
+        </div>
+        {% if genindexentries %}
+            {% macro indexentries(firstname, links) %}
+                {%- if links -%}
+                    <a href="{{ links[0][1] }}">
+                        {%- if links[0][0] %}<strong>{% endif -%}
                         {{ firstname|e }}
-                    {%- endif %}
-                {% endmacro %}
+                        {%- if links[0][0] %}</strong>{% endif -%}
+                    </a>
 
-                <h1>Index</h1>
+                    {%- for ismain, link in links[1:] -%}
+                        , <a href="{{ link }}">{% if ismain %}<strong>{% endif -%}
+                        [{{ loop.index }}]
+                        {%- if ismain %}</strong>{% endif -%}
+                    </a>
+                    {%- endfor %}
+                {%- else %}
+                    {{ firstname|e }}
+                {%- endif %}
+            {% endmacro %}
 
-                <div class="level">
-                    {% for key, dummy in genindexentries -%}
-                        <div class="level-item has-text-centered">
-                            <a href="#{{ key }}">{{ key }}</a>
+            <h1>Index</h1>
+
+            <div class="index-nav">
+                {% for key, dummy in genindexentries -%}
+                    <div class="index-letter">
+                        <a href="#{{ key }}">{{ key }}</a>
+                    </div>
+                    {% if not loop.last %}| {% endif %}
+                {%- endfor %}
+            </div>
+
+            {%- for key, entries in genindexentries %}
+                <h2 id="{{ key }}">{{ key }}</h2>
+                <div>
+                    {%- for entryname, (links, subitems, _) in entries %}
+                        <div>
+                            {{ indexentries(entryname, links) }}
+                            {%- if subitems %}
+                                <div>
+                                    {%- for subentryname, subentrylinks in subitems %}
+                                        {{ indexentries(subentryname, subentrylinks) }}
+                                    {%- endfor %}
+                                </div>
+                            {%- endif -%}
+                            </li>
                         </div>
-                        {% if not loop.last %}| {% endif %}
                     {%- endfor %}
                 </div>
-
-                {%- for key, entries in genindexentries %}
-                    <h2 id="{{ key }}">{{ key }}</h2>
-                    <div class="columns is-multiline is-mobile index--padded">
-                        {%- for entryname, (links, subitems, _) in entries %}
-                            <div class="column is-one-quarter">
-                                {{ indexentries(entryname, links) }}
-                                {%- if subitems %}
-                                    <div class="column is-one-quarter index--padded">
-                                        {%- for subentryname, subentrylinks in subitems %}
-                                            {{ indexentries(subentryname, subentrylinks) }}
-                                        {%- endfor %}
-                                    </div>
-                                {%- endif -%}
-                                </li>
-                            </div>
-                        {%- endfor %}
-                    </div>
-                {% endfor %}
-            {% endif %}
-            <div id="search-results">
+            {% endfor %}
+        {% endif %}
+        <footer class="footer">
+            <div class="container">
+                <div class="content has-text-centered">
+                    <p>
+                        Documentation generated by <a href="http://www.sphinx-doc.org/en/stable/">Sphinx</a>
+                        and
+                        <a href="http://bronto.github.io/javasphinx/">javasphinx</a>
+                    </p>
+                    <p>
+                        Custom Sphinx theme by <a href="https://github.com/dmitriid">Dmitrii 'Mamut'
+                        Dimandt</a>.
+                        If you want to reuse it for your own project,
+                        <a href="https://github.com/dmitriid/freja-sphinx">clone it from GitHub</a>.
+                        The theme code (<code>layout.html</code> and <code>freja.css</code>) is
+                        licensed
+                        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
+                    </p>
+                    <p>
+                        This theme is based on <a
+                            href="http://elixir-lang.org/docs/stable/elixir/Kernel.html">Elixir
+                        Docs</a>
+                        designed by <a href="https://twitter.com/dignifiedquire" target="_blank"
+                                       title="@dignifiedquire">Friedel Ziegelmayer</a>
+                    </p>
+                    <p>
+                        <a href="https://linearicons.com/free">Linear Icons</a> licensed under the
+                        <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> license
+                    </p>
+                </div>
             </div>
-        
-            <p>&nbsp;</p>
-        </div>
-    </div>
+        </footer>
+    </section>
 </div>
-<footer class="footer">
-    <div class="container">
-        <div class="content has-text-centered">
-            <p>
-                Documentation generated by <a href="http://www.sphinx-doc.org/en/stable/">Sphinx</a>
-                and
-                <a href="http://bronto.github.io/javasphinx/">javasphinx</a>
-            </p>
-            <p>
-                Custom Sphinx theme by <a href="https://github.com/dmitriid">Dmitrii 'Mamut'
-                Dimandt</a>.
-                If you want to reuse it for your own project, copy and adjust <code>doc/_templates/layout.html</code>
-                and include css from <code>doc/_static</code>.
-                The theme code (<code>layout.html</code> and <code>freja.css</code>) is licensed
-                <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
-                Other theme-related attributions below.
-            </p>
-            <p>
-                <a href="http://bulma.io/documentation/layout/footer/">Bulma</a> by
-                <a href="http://jgthms.com">Jeremy Thomas</a>. The source code is licensed
-                <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
-            </p>
-            <p>
-                <a href="http://typeplate.com">Typeplate</a> by Dennis Gaebel
-                (<a href="https://twitter.com/gryghostvisuals">@gryghostvisuals</a>) &
-                Zachary Kain (<a href="https://twitter.com/@zakkain">@zakkain</a>).
-                The source code is licensed
-                <a href="hhttps://creativecommons.org/licenses/by/3.0/us/">CC BY 3.0</a>.
-            </p>
-        </div>
-    </div>
-</footer>
 </body>
 </html>
